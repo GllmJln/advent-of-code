@@ -6,7 +6,7 @@ function syncReadFile(filename) {
 
     return arr;
 }
-const output = syncReadFile('input-data.txt');
+const output = syncReadFile('./day2.txt');
 console.log(output)
 
 const scoresForOutcome = {
@@ -36,6 +36,14 @@ const mappingTemplate = {
     Z: "scissors"
 }
 
+const step2MappingTemplate = {
+    ...mappingTemplate,
+    X: "loosing",
+    Y: "draw",
+    Z: "winning"
+}
+
+
 const step1 = output
     .map(value => value
         .split(" ")
@@ -58,3 +66,26 @@ const step1 = output
     ).reduce((a, b) => a + b, 0)
 
 console.log(step1)
+
+const step2 = output
+.map(value => value
+    .split(" ")
+    .map(value => step2MappingTemplate[value])
+    ).map(value => {
+        const firstElf = value[0]
+        const outcome = value[1]
+        if (outcome === "winning"){
+            const yourPlay = winning[winning[firstElf]]
+            return scoresForChosenStrategy[yourPlay] + scoresForOutcome[outcome]
+        } else if (outcome === "loosing") {
+            const yourPlay = winning[firstElf]
+            return scoresForChosenStrategy[yourPlay] + scoresForOutcome[outcome]
+        } else {
+            const yourPlay = firstElf
+            return scoresForChosenStrategy[yourPlay] + scoresForOutcome[outcome]
+        }
+    }
+    ).reduce((a,b) => a + b, 0)
+
+console.log(step2)
+

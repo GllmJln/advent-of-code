@@ -1,4 +1,4 @@
-const {readFileSync,} = require('fs');
+const {readFileSync} = require('fs');
 function syncReadFile(filename) {
   const contents = readFileSync(filename, 'utf-8');
 
@@ -6,7 +6,8 @@ function syncReadFile(filename) {
 
   return arr;
 }
-const output = syncReadFile('./input-data.txt');
+const output = syncReadFile('./day1.txt');
+console.log(output)
 
 const s = output
   .join()
