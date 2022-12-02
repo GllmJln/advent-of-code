@@ -1,6 +1,7 @@
 const {readFileSync} = require('fs');
+const {resolve} = require('path')
 function syncReadFile(filename) {
-  const contents = readFileSync(filename, 'utf-8');
+    const contents = readFileSync(resolve(__dirname, filename), "utf-8");
 
   const arr = contents.split(/\r?\n/);
 
