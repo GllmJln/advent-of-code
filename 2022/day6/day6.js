@@ -13,7 +13,7 @@ console.log(output);
 const step1 = output
     .findIndex((_, index) => index - 4 >= 0 ? [...new Set(output.slice(index - 4, index))].length === 4 : false)
 const step2 = output
-    .findIndex((_, index) => index - 14 >= 0 ? [...new Set(output.slice(index - 14, index))].length === 4 : false)
+    .findIndex((_, index) => index - 14 >= 0 ? [...new Set(output.slice(index - 14, index))].length === 14 : false)
 
 console.log(step1)
 console.log(step2)
