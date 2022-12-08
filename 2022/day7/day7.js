@@ -1,4 +1,4 @@
-const { readFileSync, Dirent } = require("fs");
+const { readFileSync } = require("fs");
 const { resolve } = require("path");
 function syncReadFile(filename) {
     const contents = readFileSync(resolve(__dirname, filename), "utf-8");
