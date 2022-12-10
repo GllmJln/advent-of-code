@@ -1,4 +1,4 @@
-import { isInPlace, getNewTailPos, solve, startingMap } from "./day9";
+import { getNewTailPos, solve, startingMap } from "./day9";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 import { fileURLToPath } from "url";
