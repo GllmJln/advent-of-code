@@ -9,13 +9,6 @@ import (
 	"strings"
 )
 
-type Game struct {
-	id    int
-	red   int
-	green int
-	blue  int
-}
-
 func main() {
 	f, err := os.Open("input.txt")
 
